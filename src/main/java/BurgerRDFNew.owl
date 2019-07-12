@@ -1,0 +1,2293 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.burger.com/burger.owl#"
+     xml:base="http://www.burger.com/burger.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.burger.com/burger.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasBase">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.burger.com/burger.owl#isBaseOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#BurgerBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasCountryOfOrigin -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasCountryOfOrigin">
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasFilling -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasFilling">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.burger.com/burger.owl#isFillingOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.burger.com/burger.owl#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasPatty -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasPatty">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.burger.com/burger.owl#isPattyOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasSpiciness -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasSpiciness">
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#SpicinessValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasStructure -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#hasStructure"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#isBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#isBaseOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#BurgerBase"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#isFillingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#isFillingOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#isIngredientOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#isPattyOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.burger.com/burger.owl#isPattyOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.burger.com/burger.owl#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+        <rdfs:range rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.burger.com/burger.owl#hasPrice -->
+
+    <owl:DatatypeProperty rdf:about="http://www.burger.com/burger.owl#hasPrice">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.burger.com/burger.owl#AustralianBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#AustralianBurger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Pineapple"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Chicken"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Lamb"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Avacado -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Avacado">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#FruitFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BarbecueSauce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BarbecueSauce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SauceFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beans -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Beans">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beef -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Beef">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BeefBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BeefBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beetroot -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Beetroot">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BlueCheese -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BlueCheese">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BuffaloBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BuffaloBurger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#BuffaloMeat"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BuffaloMeat -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BuffaloMeat">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Bun -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Bun">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerBase"/>
+        <owl:disjointWith rdf:resource="http://www.burger.com/burger.owl#Roti"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Burger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Burger">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BurgerBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPrice"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BurgerBase -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BurgerBase"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BurgerFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BurgerFilling"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BurgerName -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BurgerName">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#Burger"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BurgerPatty -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#BurgerPatty"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ButterFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#ButterFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpecialFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Carolina-style_hamburger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Carolina-style_hamburger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Avacado"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#PeanutSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cheddar -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Cheddar">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#CheesyBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#CheesyBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                        <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#CheesyFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#CheesyFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Chicken -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Chicken">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Chile -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Chile">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ChiliConCarneSauce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#ChiliConCarneSauce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SauceFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ChipsyBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#ChipsyBurger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cilantro -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Cilantro">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cole -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Cole">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Country -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Country"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Curry_burger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Curry_burger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#TomatoSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#YogurtFillings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Chicken"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Lamb"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#EggFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#EggFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpecialFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ExpenciveBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#ExpenciveBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPrice"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#FruitFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#FruitFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#HighTowerBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#HighTowerBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Hot -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Hot">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Jalapeno -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Jalapeno">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Lamb -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Lamb">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Lettuce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Lettuce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Low -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Low">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mango -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Mango">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#FruitFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mashroom -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Mashroom">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#MeatPatty -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#MeatPatty">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Medium -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpicinessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mozzarella -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Mozzarella">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mustard -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Mustard">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mutton -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Mutton">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#NonExpenciveBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#NonExpenciveBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPrice"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#NonVegBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#NonVegBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.burger.com/burger.owl#VegBurger"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Onion -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Onion">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#PeanutSauce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#PeanutSauce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SauceFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Peppers -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Peppers">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitableFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Pineapple -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Pineapple">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#FruitFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Pork -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Pork">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Prawn -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Prawn">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Roti -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Roti">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#RotiBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#RotiBurger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Roti"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Salmon -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Salmon">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SauceFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SauceFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SeaFoodBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SeaFoodBurger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SeaFoodPatty -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SeaFoodPatty">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Slugburger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Slugburger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#SwissCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SpecialFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SpecialFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SpicinessValuePartition -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SpicinessValuePartition">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#ValuePosition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SpicyBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SpicyBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#BurgerFilling"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Steamed_cheeseburger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Steamed_cheeseburger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Avacado"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SweetBurgers -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SweetBurgers">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Mango"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#PeanutSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#SwissCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#YogurtFillings"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#pepperJack"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SwissCheese -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#SwissCheese">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#TeriyakiSauce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#TeriyakiSauce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SauceFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Teriyakiburger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Teriyakiburger">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerName"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasFilling"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#pepperJack"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#MeatPatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Tomato -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#Tomato">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#TomatoSauce -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#TomatoSauce">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SauceFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ValuePosition -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#ValuePosition"/>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#VegBurger -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#VegBurger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.burger.com/burger.owl#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasPatty"/>
+                        <owl:allValuesFrom rdf:resource="http://www.burger.com/burger.owl#VegitablePatty"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#VegitableFilling -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#VegitableFilling">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Hot"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#VegitablePatty -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#VegitablePatty">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#BurgerPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#YogurtFillings -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#YogurtFillings">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SpecialFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Low"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#pepperJack -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#pepperJack">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#CheesyFilling"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.burger.com/burger.owl#hasSpiciness"/>
+                <owl:someValuesFrom rdf:resource="http://www.burger.com/burger.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#tuna -->
+
+    <owl:Class rdf:about="http://www.burger.com/burger.owl#tuna">
+        <rdfs:subClassOf rdf:resource="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.burger.com/burger.owl#America -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#America">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#AmericanBaisonBurger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#AmericanBaisonBurger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#BuffaloBurger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#America"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#BuffaloMeat"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Aussie_Burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Aussie_Burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#AustralianBurger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#Australia"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Pineapple"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Chicken"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Lamb"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Australia -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Australia">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Avacado -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Avacado">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Avacado"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BarbecueSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#BarbecueSauce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Barbecue_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Barbecue_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#ChipsyBurger"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#Japan"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">990</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beans -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Beans">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beef -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Beef">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Beetroot -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Beetroot">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BlueCheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#BlueCheese">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#BuffaloMeat -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#BuffaloMeat">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#BuffaloMeat"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Bun -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Bun">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ButterFilling -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#ButterFilling">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#California_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#California_burger">
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#America"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1450</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Carolina_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Carolina_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Carolina-style_hamburger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Avacado"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#PeanutSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Tomato"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">890</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cheddar -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Cheddar">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Chicken -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Chicken">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Chicken"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Chile -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Chile">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#ChiliConCarneSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#ChiliConCarneSauce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cilantro -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Cilantro">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Cilantro"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Cole -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Cole">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Curry_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Curry_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Curry_burger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Roti"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#America"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Chile"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Lamb"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#TomatoSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#YogurtFillings"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Chicken"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#EggFilling -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#EggFilling">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#India -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#India">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">980</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Jalapeno -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Jalapeno">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Japan -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Japan">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Korea -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Korea">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Lamb -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Lamb">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Lamb"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Lettuce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Lettuce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Lettuce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mango -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mango">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Mango"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mashroom -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mashroom">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Mashroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mexico -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mexico">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Country"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mozzarella -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mozzarella">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mustard -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mustard">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Mutton -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Mutton">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Mutton"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Naan_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Naan_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#RotiBurger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Roti"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#India"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Prawn"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">750</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Onion -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Onion">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#PeanutSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#PeanutSauce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#PeanutSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Peppers -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Peppers">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Pineapple -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Pineapple">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Pineapple"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Pork -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Pork">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Pork"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Prawn -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Prawn">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Prawn"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Roti -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Roti">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Roti"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Salmon -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Salmon">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Salmon"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Salmon_Burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Salmon_Burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#SeaFoodBurger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#Korea"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Salmon"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">950</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Slugburger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Slugburger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Slugburger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#Mexico"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#SwissCheese"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">590</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Steamed_cheeseburger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Steamed_cheeseburger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Steamed_cheeseburger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Avacado"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mozzarella"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mustard"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Tomato"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">860</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#SwissCheese -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#SwissCheese">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#SwissCheese"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#TeriyakiSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#TeriyakiSauce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Teriyaki_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Teriyaki_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Teriyakiburger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#Japan"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#pepperJack"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beef"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Pork"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Tuna"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1600</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Thai_Mango_Burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Thai_Mango_Burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#SweetBurgers"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Mango"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#PeanutSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#SwissCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#YogurtFillings"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#pepperJack"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Beans"/>
+        <hasPatty rdf:resource="http://www.burger.com/burger.owl#Mashroom"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">850</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Thai_mango_Buurger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Thai_mango_Buurger">
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">690</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Tomato -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Tomato">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#Tomato"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#TomatoSauce -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#TomatoSauce">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#TomatoSauce"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#Tuna -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#Tuna">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#tuna"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#YogurtFillings -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#YogurtFillings">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#YogurtFillings"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#pepperJack -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#pepperJack">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#pepperJack"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.burger.com/burger.owl#50/50_burger -->
+
+    <owl:NamedIndividual rdf:about="http://www.burger.com/burger.owl#50/50_burger">
+        <rdf:type rdf:resource="http://www.burger.com/burger.owl#ChipsyBurger"/>
+        <hasBase rdf:resource="http://www.burger.com/burger.owl#Bun"/>
+        <hasCountryOfOrigin rdf:resource="http://www.burger.com/burger.owl#America"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BarbecueSauce"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Beetroot"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#BlueCheese"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#ButterFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cheddar"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Cole"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#EggFilling"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Jalapeno"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Onion"/>
+        <hasFilling rdf:resource="http://www.burger.com/burger.owl#Peppers"/>
+        <hasPrice rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1200</hasPrice>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#AustralianBurger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#BuffaloBurger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Carolina-style_hamburger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#ChipsyBurger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Curry_burger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#RotiBurger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SeaFoodBurger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Slugburger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Steamed_cheeseburger"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SweetBurgers"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Teriyakiburger"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Avacado"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Mango"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Pineapple"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#BarbecueSauce"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#ChiliConCarneSauce"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#PeanutSauce"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#TeriyakiSauce"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#TomatoSauce"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Beans"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Mashroom"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Tomato"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Beef"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#BuffaloMeat"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Chicken"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Lamb"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Mutton"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Pork"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Beetroot"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Cilantro"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Cole"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Jalapeno"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Lettuce"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Mustard"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Onion"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Peppers"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#BlueCheese"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Cheddar"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Mozzarella"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SwissCheese"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#pepperJack"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#ButterFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#EggFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#YogurtFillings"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#CheesyFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#FruitFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SauceFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SpecialFilling"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#VegitableFilling"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Hot"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Low"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Medium"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#MeatPatty"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#SeaFoodPatty"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#VegitablePatty"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Prawn"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#Salmon"/>
+            <rdf:Description rdf:about="http://www.burger.com/burger.owl#tuna"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

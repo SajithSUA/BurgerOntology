@@ -1,0 +1,1642 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.hotels.com/ontologies/hotel.owl#"
+     xml:base="http://www.hotels.com/ontologies/hotel.owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:hotel="http://www.hotels.com/ontologies/hotel.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.hotels.com/ontologies/hotel.owl">
+        <rdfs:comment>A hotel ontology that describes various hotels based on their star system, market, location and size.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#floatsOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#floatsOn">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasFacility">
+        <owl:inverseOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#isFacility"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasMarket -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasMarket">
+        <owl:inverseOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#isMarket"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasPrice -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasPrice">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#PriceRange"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasProvidedServiceLevel -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasProvidedServiceLevel">
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#LevelOfService"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasService -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasService">
+        <owl:inverseOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#isService"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasStarSystemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasStarSystemOf">
+        <owl:inverseOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#isStarSystemOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#isFacility -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#isFacility"/>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#isMarket -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#isMarket"/>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#isService -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#isService"/>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#isStarSystemOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#isStarSystemOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms">
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#hasNoOfWheels -->
+
+    <owl:DatatypeProperty rdf:about="http://www.hotels.com/ontologies/hotel.owl#hasNoOfWheels">
+        <rdfs:domain rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Rotels"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AC -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AC">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ACRooms -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ACRooms">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                        <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#AirConditioned"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#NonACRooms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AboveAverageHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AboveAverageHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">299</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Affordable -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Affordable">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#PriceRange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AirConditioned -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AirConditioned">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#AC"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AirportArea -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AirportArea">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AirportHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AirportHotel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasMarket"/>
+                        <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#FlightPassengers"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                        <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#AirportArea"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#AverageHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#AverageHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">26</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:intersectionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#BabySitting -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#BabySitting">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Paid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Bar -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Bar">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Bathroom -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Bathroom">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Beach -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Beach">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#BeachSide -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#BeachSide">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Beach"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ResortHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#BoardGame -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#BoardGame">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Free"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#BudgetLimitedService -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#BudgetLimitedService">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#LevelOfService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Business -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Business">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#City -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#City">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#CityHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#CityHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#City"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasMarket"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Business"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Environment -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Environment">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ExpensiveRoomsHotels -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ExpensiveRoomsHotels">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#namedHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Facility -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Facility">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FillingStation -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FillingStation">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FireAlarm -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FireAlarm">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Free"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FitnessCenter -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FitnessCenter">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FiveStarHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FiveStarHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#FitnessCenter"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#SwimmingPool"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasProvidedServiceLevel"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#WorldClassService"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.hotels.com/ontologies/hotel.owl#FitnessCenter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SwimmingPool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FlightPassengers -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FlightPassengers">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Floatels -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Floatels">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#floatsOn"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#River"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Sea"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Forest -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Forest">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ForestSide -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ForestSide">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Forest"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ResortHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#FourStarHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#FourStarHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasService"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Service"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Free -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Free">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Service"/>
+        <owl:disjointWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Paid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#High -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#High">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#PriceRange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HillSide -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#HillSide">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Mountain"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ResortHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HomeStay -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#HomeStay">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Hotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Kitchen -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Kitchen">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#LargeHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#LargeHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">300</xsd:minInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Size"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#LevelOfService -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#LevelOfService">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Library -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Library">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Free"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#LivingRoom -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#LivingRoom">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#LobbyBar -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#LobbyBar">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Paid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Location -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Location">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Low -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Low">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#PriceRange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#LuxuriousHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#LuxuriousHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#namedHotel"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasProvidedServiceLevel"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#WorldClassService"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.hotels.com/ontologies/hotel.owl#FitnessCenter"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SwimmingPool"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Market -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Market">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#MidRangeService -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#MidRangeService">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#LevelOfService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Motel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Motel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasMarket"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Motorist"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#MotelFacilities -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#MotorGarage -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#MotorGarage">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Motorist -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Motorist">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Mountain -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Mountain">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#NonACRooms -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#NonACRooms">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ACRooms"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#OneStarHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#OneStarHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasProvidedServiceLevel"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#BudgetLimitedService"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Paid -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Paid">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ParkingArea -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ParkingArea">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#PriceRange -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#PriceRange">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ResortHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ResortHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#River -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#River">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Rooms -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Rotels -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rotels">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasNoOfWheels"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">6</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#AirConditioned"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Sea -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Sea">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SeaSide -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#SeaSide">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:allValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Sea"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ResortHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Service -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Service">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Size -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Size">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SmallHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#SmallHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasNoOfRooms"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#StarSystem -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#StarSystem">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SuburbanHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#SuburbanHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Location"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#CityHotel"/>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasPrice"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Affordable"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SuiteHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#SuiteHotel">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Kitchen"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#LivingRoom"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#namedHotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SwimmingPool -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#SwimmingPool">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Telephone -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Telephone">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Television -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Television">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ThreeStarHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#ThreeStarHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Television"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Bar"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#TimeShare -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#TimeShare">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasSurroundedWith"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Beach"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Forest"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Mountain"/>
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Sea"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Market"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Transport -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#Transport">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Paid"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#TwoStarHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#TwoStarHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#StarSystem"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Rooms"/>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Bathroom"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasFacility"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Telephone"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasService"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Bathroom"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.hotels.com/ontologies/hotel.owl#hasService"/>
+                <owl:someValuesFrom rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Telephone"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#WheelChairAccess -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#WheelChairAccess">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Free"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#WiFi -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#WiFi">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Facility"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#WorldClassService -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#WorldClassService">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#LevelOfService"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#bicyclehire -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#bicyclehire">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#bikehire -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#bikehire">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#carhire -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#carhire">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Transport"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#namedHotel -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#namedHotel">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Hotel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#roadMaps -->
+
+    <owl:Class rdf:about="http://www.hotels.com/ontologies/hotel.owl#roadMaps">
+        <rdfs:subClassOf rdf:resource="http://www.hotels.com/ontologies/hotel.owl#MotelFacilities"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ArugambayBeach -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#ArugambayBeach">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Beach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ArugambayVilla -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#ArugambayVilla">
+        <hasSurroundedWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ArugambayBeach"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#BandaranayakeInternationalAirport -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#BandaranayakeInternationalAirport">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#AirportArea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Bathroom1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Bathroom1">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Bathroom"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#CarribeanSea -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#CarribeanSea">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Sea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Christine -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Christine">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#FlightPassengers"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ClotheManufacturing -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#ClotheManufacturing">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Business"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ColomboHiltonHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#ColomboHiltonHotel">
+        <hasNoOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasNoOfRooms>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#ConradMaldives -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#ConradMaldives">
+        <floatsOn rdf:resource="http://www.hotels.com/ontologies/hotel.owl#IndianOcean"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#CoralVillaMotorInn -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#CoralVillaMotorInn">
+        <hasMarket rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Kevin"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#GaladariService -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#GaladariService">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#WorldClassService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#GymGaladari -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#GymGaladari">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#FitnessCenter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelAlexandra -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelAlexandra">
+        <hasNoOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">20</hasNoOfRooms>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelCharming -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelCharming">
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Room2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelClinton -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelClinton">
+        <hasNoOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</hasNoOfRooms>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelGaladari -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelGaladari">
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#GymGaladari"/>
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Room1"/>
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SwimmingFree"/>
+        <hasProvidedServiceLevel rdf:resource="http://www.hotels.com/ontologies/hotel.owl#GaladariService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelLavanya -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelLavanya">
+        <hasMarket rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Christine"/>
+        <hasSurroundedWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#BandaranayakeInternationalAirport"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelMasachusset -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelMasachusset">
+        <hasNoOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">75</hasNoOfRooms>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelMiddleCity -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelMiddleCity">
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Room1"/>
+        <hasMarket rdf:resource="http://www.hotels.com/ontologies/hotel.owl#ClotheManufacturing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelMountainView -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelMountainView">
+        <hasSurroundedWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Knuckles"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#HotelTranslavinia -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#HotelTranslavinia">
+        <hasNoOfRooms rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">155</hasNoOfRooms>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#IndianOcean -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#IndianOcean">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Sea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Kevin -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Kevin">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Motorist"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Knuckles -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Knuckles">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Mountain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#MaharajaExpress -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#MaharajaExpress">
+        <hasNoOfWheels rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">6</hasNoOfWheels>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#MatildaHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#MatildaHotel">
+        <hasSurroundedWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#CarribeanSea"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Room1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Room1">
+        <hasPrice rdf:resource="http://www.hotels.com/ontologies/hotel.owl#45000"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Room2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Room2">
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Bathroom1"/>
+        <hasFacility rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Telephone1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SanaraHotel -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#SanaraHotel">
+        <hasProvidedServiceLevel rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SanaraService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SanaraService -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#SanaraService">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#BudgetLimitedService"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SinharajaForest -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#SinharajaForest">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Forest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SinharajaLodge -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#SinharajaLodge">
+        <hasSurroundedWith rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SinharajaForest"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#SwimmingFree -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#SwimmingFree">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#SwimmingPool"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#Telephone1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#Telephone1">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#Telephone"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.hotels.com/ontologies/hotel.owl#45000 -->
+
+    <owl:NamedIndividual rdf:about="http://www.hotels.com/ontologies/hotel.owl#45000">
+        <rdf:type rdf:resource="http://www.hotels.com/ontologies/hotel.owl#High"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#AboveAverageHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#AverageHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#LargeHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#SmallHotel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#BabySitting"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#LobbyBar"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Transport"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#BeachSide"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#ForestSide"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#HillSide"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#SeaSide"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#BoardGame"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#FireAlarm"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#Library"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#WheelChairAccess"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#BudgetLimitedService"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#MidRangeService"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#WorldClassService"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#FillingStation"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#MotorGarage"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#ParkingArea"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#roadMaps"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#FiveStarHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#FourStarHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#OneStarHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#ThreeStarHotel"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#TwoStarHotel"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#bicyclehire"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#bikehire"/>
+            <rdf:Description rdf:about="http://www.hotels.com/ontologies/hotel.owl#carhire"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

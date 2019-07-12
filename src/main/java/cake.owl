@@ -1,0 +1,1601 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.cake.com/ontologies/cake.owl#"
+     xml:base="http://www.cake.com/ontologies/cake.owl"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.cake.com/ontologies/cake.owl">
+        <rdfs:comment>To describe about different types of Cakes</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#IsCakeBaseOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#IsCakeBaseOf">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasCakeBase -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasCakeBase">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasFrosting -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasFrosting">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isFrostingOf"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasFruit -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasFruit">
+        <rdfs:subPropertyOf rdf:resource="http://www.cake.com/ontologies/cake.owl#hasIngredient"/>
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isFruitOf"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Fruit"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasIngredient -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasIngredient">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isIngredientOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasOccasion -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasOccasion">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isOccasionOf"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasShape -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasShape">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isShapeOf"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasSize -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasSize">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasSweetness -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasSweetness">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#SweetnessValuePartition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasTopping -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasTopping">
+        <owl:inverseOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isToppingOf"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isFrostingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isFrostingOf">
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isFruitOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isFruitOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.cake.com/ontologies/cake.owl#isIngredientOf"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Fruit"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isIngredientOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isIngredientOf">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isOccasionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isOccasionOf">
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isShapeOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isShapeOf">
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#isToppingOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.cake.com/ontologies/cake.owl#isToppingOf">
+        <rdfs:domain rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+        <rdfs:range rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#hasPriceValue -->
+
+    <owl:DatatypeProperty rdf:about="http://www.cake.com/ontologies/cake.owl#hasPriceValue">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#AllCakeTypes -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#AllCakeTypes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#RoseCakeBase"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#BirthdayCakes -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#BirthdayCakes">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasOccasion"/>
+                        <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#Birthday"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ButterBase -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ButterBase">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ButterCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ButterCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Cake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Cake">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasPriceValue"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CakeBase -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CakeBase">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CakeShape -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CakeShape">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CakesWithButterCream -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CakesWithButterCream">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#ClassicButterFrosting"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#FrenchMeringueFrosting"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#ItalianMeringueFrosting"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                                <owl:hasValue rdf:resource="http://www.cake.com/ontologies/cake.owl#SwissMeringueFrosting"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CarrotCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CarrotCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CheesyFlavouredCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CheesyFlavouredCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                        <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ChocalateCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ChocalateCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocolateBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ChocolateBase -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ChocolateBase">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CoffeeBase -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CoffeeBase">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CoffeeCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CoffeeCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#DateCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#DateCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ExpensiveCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ExpensiveCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasPriceValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Frosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Frosting">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Fruit -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Fruit">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#FruitCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#FruitCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasIngredient"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#Fruit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#FudgeCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#FudgeCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocolateBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#GanacheFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#GanacheFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#GlazeFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#GlazeFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#High -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#High">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#SweetnessValuePartition"/>
+        <owl:disjointWith rdf:resource="http://www.cake.com/ontologies/cake.owl#Medium"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Ingredient -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Ingredient">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#LargeSize -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#LargeSize">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#LayerCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#LayerCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#LessExpensiveCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#LessExpensiveCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasPriceValue"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1000</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#LoveCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#LoveCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Medium -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Medium">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#SweetnessValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#MediumSize -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#MediumSize">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#MidSweetyCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#MidSweetyCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#Medium"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#NamedCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#NamedCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Cake"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Occasion -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Occasion">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ParchmentIcing -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ParchmentIcing">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#High"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RedVelvetCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#RedVelvetCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocolateBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ParchmentIcing"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RibbonCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#RibbonCake">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#NamedCake"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasCakeBase"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#High"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Size -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Size">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#LargeSize"/>
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#MediumSize"/>
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#SmallSize"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#SmallSize -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#SmallSize">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#SweetnessValuePartition -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#SweetnessValuePartition">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#High"/>
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Medium"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#ValuePartition"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#SweetyCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#SweetyCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#High"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                                <owl:onClass rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#TastyCake -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#TastyCake">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasFrosting"/>
+                        <owl:minCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Topping -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ValuePartition -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#ValuePartition">
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#VanillaBase -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#VanillaBase">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting -->
+
+    <owl:Class rdf:about="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting">
+        <rdfs:subClassOf rdf:resource="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.cake.com/ontologies/cake.owl#hasSweetness"/>
+                <owl:someValuesFrom rdf:resource="http://www.cake.com/ontologies/cake.owl#Medium"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#AmazingButterCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#AmazingButterCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Birthday"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Smarties"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1500</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Anniversary -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Anniversary">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Birthday -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Birthday">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Blueberry -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Blueberry"/>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CandyGlazeFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CandyGlazeFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CandyMeltFudgeCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CandyMeltFudgeCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#DarkGranacheFrosting"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Loaf"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CheesyCarrotCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CheesyCarrotCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Christmas"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Square"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Sprinkles"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2000</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Cherries -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Cherries">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Cherry -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Cherry"/>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CherryButterCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CherryButterCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Birthday"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Smarties"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2500</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ChocalateBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ChocalateBase">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocolateBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ChocalateFudgeCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ChocalateFudgeCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#DarkGranacheFrosting"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Square"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Chocalateballs"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2300</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ChocalateTastyCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ChocalateTastyCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#DarkGranacheFrosting"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Birthday"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Chocalateballs"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">900</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Chocalateballs -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Chocalateballs">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Christmas -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Christmas">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CitrusFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CitrusFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CitrusGlazeFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CitrusGlazeFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ClassicButterFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ClassicButterFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ClassicDateCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ClassicDateCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasIngredient rdf:resource="http://www.cake.com/ontologies/cake.owl#Dates"/>
+        <hasIngredient rdf:resource="http://www.cake.com/ontologies/cake.owl#Nuts"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Christmas"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ClassicFruitLoafCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ClassicFruitLoafCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#SwissMeringueFrosting"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Blueberry"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Cherry"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Pineapple"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#General"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Loaf"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">600</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CoffeeBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CoffeeBase">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#DarkGranacheFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#DarkGranacheFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GanacheFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Dates -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Dates">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#FlavouredGlazeFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#FlavouredGlazeFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#FrenchMeringueFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#FrenchMeringueFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#GanacheTastyCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#GanacheTastyCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#RubyGanacheFrosting"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Round"/>
+        <hasSize rdf:resource="http://www.cake.com/ontologies/cake.owl#Large"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Oreo"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#General -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#General">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Heart -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Heart">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ItalianMeringueFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ItalianMeringueFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Large -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Large">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#LayeredRibbonCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#LayeredRibbonCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Square"/>
+        <hasSize rdf:resource="http://www.cake.com/ontologies/cake.owl#Small"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">400</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Loaf -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Loaf">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Medium -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Medium">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Nuts -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Nuts">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Oreo -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Oreo">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#OreoCarrotCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#OreoCarrotCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Christmas"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Triangle"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Oreo"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3500</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ParchmentIcingFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ParchmentIcingFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ParchmentIcing"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Pineapple -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Pineapple"/>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#PolishCreamCoffeeCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#PolishCreamCoffeeCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#CitrusGlazeFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#General"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Chocalateballs"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1800</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RiyalIcingFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RiyalIcingFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RomanticVelvetCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RomanticVelvetCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#ChocalateBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#ItalianMeringueFrosting"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Strawberry"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Anniversary"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Heart"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Chocalateballs"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Sprinkles"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2500</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RoseCakeBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RoseCakeBase">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RoseRibbonCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RoseRibbonCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#ClassicButterFrosting"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Square"/>
+        <hasSize rdf:resource="http://www.cake.com/ontologies/cake.owl#Medium"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">700</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Round -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Round">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#RoyalIcingFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#RubyGanacheFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#RubyGanacheFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GanacheFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#SimpleGlazeFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#SimpleGlazeFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GlazeFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Small -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Small">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Size"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Smarties -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Smarties">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Sprinkles -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Sprinkles">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Topping"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Square -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Square">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Strawberry -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Strawberry"/>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#StrawberryCoffeeCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#StrawberryCoffeeCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#CandyGlazeFrosting"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Strawberry"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Oreo"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2450</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#StrawberryFruitLoafCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#StrawberryFruitLoafCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#CreamCheeseFrosting"/>
+        <hasFruit rdf:resource="http://www.cake.com/ontologies/cake.owl#Strawberry"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#General"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Loaf"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Cherries"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2700</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#SwissMeringueFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#SwissMeringueFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterCreamFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Triangle -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Triangle">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#ValentineCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#ValentineCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#YellowCakeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#FrenchMeringueFrosting"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Anniversary"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Wedding"/>
+        <hasShape rdf:resource="http://www.cake.com/ontologies/cake.owl#Heart"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3000</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#VanillaBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#VanillaBase">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#VintageRedVelvetCake -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#VintageRedVelvetCake">
+        <hasCakeBase rdf:resource="http://www.cake.com/ontologies/cake.owl#RoseCakeBase"/>
+        <hasFrosting rdf:resource="http://www.cake.com/ontologies/cake.owl#RubyGanacheFrosting"/>
+        <hasIngredient rdf:resource="http://www.cake.com/ontologies/cake.owl#Nuts"/>
+        <hasOccasion rdf:resource="http://www.cake.com/ontologies/cake.owl#Anniversary"/>
+        <hasTopping rdf:resource="http://www.cake.com/ontologies/cake.owl#Oreo"/>
+        <hasPriceValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4000</hasPriceValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#Wedding -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#Wedding">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#WhippedCreamFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#WhiteGranacheFrosting -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#WhiteGranacheFrosting">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#GanacheFrosting"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.cake.com/ontologies/cake.owl#YellowCakeBase -->
+
+    <owl:NamedIndividual rdf:about="http://www.cake.com/ontologies/cake.owl#YellowCakeBase">
+        <rdf:type rdf:resource="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#ButterBase"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#ChocolateBase"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#CoffeeBase"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#VanillaBase"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#ButterCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#CarrotCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#ChocalateCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#CoffeeCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#DateCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#FruitCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#FudgeCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#LoveCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#RedVelvetCake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#RibbonCake"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Cake"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#CakeBase"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#CakeShape"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Frosting"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Ingredient"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Occasion"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#Topping"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#ValuePartition"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#LargeSize"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#MediumSize"/>
+            <rdf:Description rdf:about="http://www.cake.com/ontologies/cake.owl#SmallSize"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
